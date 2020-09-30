@@ -1,0 +1,17 @@
+alias vim="~/squashfs-root/usr/bin/nvim"
+alias tmux="tmux -2"
+alias 2pR="tmuxp load ~/amazon_EC2_setup/2pR.yaml"
+alias 2piPy="tmuxp load ~/amazon_EC2_setup/2piPy.yaml"
+export PATH=~/opt/bin:${PATH}
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+bindkey "^[[OA" history-substring-search-up
+bindkey "^[[OB" history-substring-search-down
+bindkey "^A" vi-beginning-of-line
+bindkey "^E" vi-end-of-line
+unalias fd
+ttyctl -f
+PROMPT='%{$fg[yellow]%}[%D{%T}] '$PROMPT
+eval `dircolors ~/.dircolors`
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
