@@ -1,5 +1,14 @@
-#sudo yum update
-#sudo yum install tmux zsh git htop
+#!/bin/bash
+if grep -q Amazon /etc/*release
+then
+    sudo yum update
+    sudo yum install tmux zsh git htop cmake
+fi
+if grep -q Ubuntu /etc/*release
+then
+    sudo apt update
+    sudo apt install zsh tmux git htop cmake
+fi
 #pip install python-language-server tmuxp
 cd
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
@@ -13,6 +22,13 @@ touch ~/.zshrc
 git clone https://github.com/zsh-users/zsh-syntax-highlighting
 curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
 git clone https://github.com/zsh-users/zsh-autosuggestions
+git clone https://github.com/thewtex/tmux-mem-cpu-load
+cd tmux-mem-cpu-load
+cmake .
+make
+sudo -s
+make install
+cd
 mkdir ~/.zsh
 mv ~/zsh-autosuggestions ~/.zsh
 mv ~/zsh-syntax-highlighting ~/.zsh
