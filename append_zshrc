@@ -16,3 +16,7 @@ eval `dircolors ~/.dircolors`
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export LC_CTYPE='en_US.UTF-8'
+# auto load tmux or attach if session already loaded
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
