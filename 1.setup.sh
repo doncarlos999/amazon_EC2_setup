@@ -1,5 +1,5 @@
 sudo yum update
-sudo yum install tmux zsh git
+sudo yum install tmux zsh git htop
 #pip install python-language-server tmuxp
 cd
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
@@ -19,6 +19,7 @@ mv ~/zsh-syntax-highlighting ~/.zsh
 git config --global user.email "crjward@gmail.com"
 git config --global user.name "doncarlos999"
 wget https://nodejs.org/dist/v12.18.4/node-v12.18.4-linux-x64.tar.xz
+mkdir ~/opt
 tar xvf node-v12.18.4-linux-x64.tar.xz \
     --exclude CHANGELOG.md \
     --exclude LICENSE \
@@ -26,3 +27,4 @@ tar xvf node-v12.18.4-linux-x64.tar.xz \
     --strip-components 1 \
     -C ~/opt
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
