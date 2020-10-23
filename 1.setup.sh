@@ -1,5 +1,5 @@
-sudo yum update
-sudo yum install tmux zsh git htop
+#sudo yum update
+#sudo yum install tmux zsh git htop
 #pip install python-language-server tmuxp
 cd
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
