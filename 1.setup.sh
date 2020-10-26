@@ -1,15 +1,22 @@
 #!/bin/bash
+# docker images don't need sudo
+SUDO=''
+if (( $EUID != 0 )); then
+    SUDO='sudo'
+fi
+$SUDO a_command
+
 if grep -q Amazon /etc/*release
 then
-    sudo yum update
-    sudo yum install tmux zsh git htop cmake
+    $SUDO yum update
+    $SUDO yum install tmux zsh git htop cmake
 fi
 if grep -q "Ubuntu\|Debian" /etc/*release
 then
-    sudo apt update
-    sudo apt install zsh tmux git htop cmake
+    $SUDO apt update
+    $SUDO apt install zsh tmux git htop cmake
 fi
-#pip install python-language-server tmuxp
+pip install python-language-server tmuxp
 cd
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x nvim.appimage
