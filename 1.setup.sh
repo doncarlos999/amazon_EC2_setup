@@ -4,7 +4,7 @@ then
     sudo yum update
     sudo yum install tmux zsh git htop cmake
 fi
-if grep -q Ubuntu /etc/*release
+if grep -q "Ubuntu\|Debian" /etc/*release
 then
     sudo apt update
     sudo apt install zsh tmux git htop cmake
