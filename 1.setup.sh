@@ -17,6 +17,7 @@ then
     $SUDO apt install zsh tmux git htop cmake
 fi
 locale-gen en_US.UTF-8 
+localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 pip install python-language-server tmuxp
 cd
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
